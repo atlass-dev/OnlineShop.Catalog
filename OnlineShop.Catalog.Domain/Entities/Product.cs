@@ -44,4 +44,9 @@ public class Product
     /// Product's category.
     /// </summary>
     required public Category Category { get; set; }
+
+    /// <summary>
+    /// Product images.
+    /// </summary>
+    public ICollection<ProductImage> Images { get; set; } = new List<ProductImage>();
 }

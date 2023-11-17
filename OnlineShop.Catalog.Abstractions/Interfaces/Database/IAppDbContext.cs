@@ -22,4 +22,14 @@ public interface IAppDbContext : IDbContextWithSets, IDisposable
     /// Brands.
     /// </summary>
     DbSet<Brand> Brands { get; }
+
+    /// <summary>
+    /// Product images.
+    /// </summary>
+    DbSet<ProductImage> ProductImages { get; }
+
+    /// <summary>
+    /// Brand images.
+    /// </summary>
+    DbSet<BrandImage> BrandImages { get; }
 }

@@ -25,6 +25,12 @@ public class AppDbContext : DbContext, IAppDbContext
     public DbSet<Brand> Brands { get; protected set; }
 
     /// <inheritdoc/>
+    public DbSet<ProductImage> ProductImages { get; protected set; }
+
+    /// <inheritdoc/>
+    public DbSet<BrandImage> BrandImages { get; protected set; }
+
+    /// <inheritdoc/>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
