@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineShop.Catalog.Abstractions.Interfaces.Database;
+using OnlineShop.Catalog.Domain.Entities;
 
 namespace OnlineShop.Catalog.DataAccess;
 
@@ -13,6 +14,15 @@ public class AppDbContext : DbContext, IAppDbContext
     public AppDbContext(DbContextOptions options) : base(options)
     {
     }
+
+    /// <inheritdoc/>
+    public DbSet<Product> Products { get; protected set; }
+
+    /// <inheritdoc/>
+    public DbSet<Category> Categories { get; protected set; }
+
+    /// <inheritdoc/>
+    public DbSet<Brand> Brands { get; protected set; }
 
     /// <inheritdoc/>
     protected override void OnModelCreating(ModelBuilder builder)
