@@ -1,11 +1,6 @@
-@OnlineShop.Catalog_HostAddress = http://localhost:5176
+@OnlineShop.Catalog_HostAddress = http://localhost:5263
 
-GET {{OnlineShop.Catalog_HostAddress}}/todos/
-Accept: application/json
-
-###
-
-GET {{OnlineShop.Catalog_HostAddress}}/todos/1
+GET {{OnlineShop.Catalog_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
