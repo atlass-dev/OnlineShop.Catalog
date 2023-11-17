@@ -19,4 +19,9 @@ public class Brand
     /// Brand's description.
     /// </summary>
     required public string Description { get; set; }
+
+    /// <summary>
+    /// Brand's images.
+    /// </summary>
+    public ICollection<BrandImage> Images { get; set; } = new List<BrandImage>();
 }
