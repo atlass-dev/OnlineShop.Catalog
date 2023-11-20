@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Catalog.UseCases.Products.Commands.CreateProduct;
+using OnlineShop.Catalog.UseCases.Products.Commands.DeleteProduct;
 using OnlineShop.Catalog.UseCases.Products.Queries.GetProductById;
 
 namespace OnlineShop.Catalog.Controllers;
@@ -41,8 +42,19 @@ public class ProductsController : ControllerBase
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>Id of created product.</returns>
     [HttpPost]
-    public async Task<int> CreateProduct([FromBody] CreateProductCommand command, CancellationToken cancellationToken)
+    public async Task<int> Create([FromBody] CreateProductCommand command, CancellationToken cancellationToken)
     {
         return await mediator.Send(command, cancellationToken);
+    }
+
+    /// <summary>
+    /// Deletes product by id.
+    /// </summary>
+    /// <param name="productId">Product id.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    [HttpDelete]
+    public async Task Delete(int productId, CancellationToken cancellationToken)
+    {
+        await mediator.Send(new DeleteProductCommand(productId), cancellationToken);
     }
 }
