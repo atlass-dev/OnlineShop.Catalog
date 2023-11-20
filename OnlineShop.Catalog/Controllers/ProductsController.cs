@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Catalog.UseCases.Products.Commands.CreateProduct;
 using OnlineShop.Catalog.UseCases.Products.Commands.DeleteProduct;
+using OnlineShop.Catalog.UseCases.Products.Commands.UpdateProduct;
 using OnlineShop.Catalog.UseCases.Products.Queries.GetProductById;
 
 namespace OnlineShop.Catalog.Controllers;
@@ -56,5 +57,16 @@ public class ProductsController : ControllerBase
     public async Task Delete(int productId, CancellationToken cancellationToken)
     {
         await mediator.Send(new DeleteProductCommand(productId), cancellationToken);
+    }
+
+    /// <summary>
+    /// Updates product.
+    /// </summary>
+    /// <param name="command">Command.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    [HttpPut]
+    public async Task Update([FromBody] UpdateProductCommand command, CancellationToken cancellationToken)
+    {
+        await mediator.Send(command, cancellationToken);
     }
 }

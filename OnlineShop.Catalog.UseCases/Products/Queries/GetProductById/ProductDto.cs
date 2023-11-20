@@ -38,5 +38,5 @@ public class ProductDto
     /// <summary>
     /// Paths to product's images.
     /// </summary>
-    public ICollection<string> ImagesPaths { get; init; } = new List<string>();
+    public ICollection<ProductImageDto> Images { get; init; } = new List<ProductImageDto>();
 }

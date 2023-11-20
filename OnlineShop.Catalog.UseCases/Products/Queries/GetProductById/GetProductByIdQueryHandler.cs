@@ -27,6 +27,7 @@ internal class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery,
     public async Task<ProductDto> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
     {
         var product = await dbContext.Products
+            .AsNoTracking()
             .ProjectTo<ProductDto>(mapper.ConfigurationProvider)
             .FirstOrDefaultAsync(p => p.Id == request.ProductId, cancellationToken);
 
