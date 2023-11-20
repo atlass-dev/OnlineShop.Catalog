@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using OnlineShop.Catalog.Domain.Entities;
 using OnlineShop.Catalog.UseCases.Products.Commands.CreateProduct;
+using OnlineShop.Catalog.UseCases.Products.Queries.GetProductById;
 
 namespace OnlineShop.Catalog.UseCases.Products;
 
@@ -16,5 +17,9 @@ internal class ProductsMappingProfile : Profile
     {
         CreateMap<CreateProductCommand, Product>()
             .ForMember(p => p.Images, opt => opt.MapFrom(command => command.ImagesPaths.Select(path => new ProductImage { Url = path })));
+        CreateMap<Product, ProductDto>()
+            .ForMember(dto => dto.ImagesPaths, opt => opt.MapFrom(p => p.Images.Select(i => i.Url)))
+            .ForMember(dto => dto.Brand, opt => opt.MapFrom(p => p.Brand.Name))
+            .ForMember(dto => dto.Category, opt => opt.MapFrom(p => p.Category.Name));
     }
 }

@@ -8,7 +8,7 @@ namespace OnlineShop.Catalog.UseCases.Products.Commands.CreateProduct;
 /// <summary>
 /// Handler for <see cref="CreateProductCommand"/>.
 /// </summary>
-public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
+internal class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
 {
     private readonly IAppDbContext dbContext;
     private readonly IMapper mapper;

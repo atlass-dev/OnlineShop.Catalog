@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Catalog.UseCases.Products.Commands.CreateProduct;
+using OnlineShop.Catalog.UseCases.Products.Queries.GetProductById;
 
 namespace OnlineShop.Catalog.Controllers;
 
@@ -19,6 +20,18 @@ public class ProductsController : ControllerBase
     public ProductsController(IMediator mediator)
     {
         this.mediator = mediator;
+    }
+
+    /// <summary>
+    /// Gets product by id.
+    /// </summary>
+    /// <param name="productId">Product id.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>Product.</returns>
+    [HttpGet]
+    public async Task<ProductDto> GetById(int productId, CancellationToken cancellationToken)
+    {
+        return await mediator.Send(new GetProductByIdQuery(productId), cancellationToken);
     }
 
     /// <summary>

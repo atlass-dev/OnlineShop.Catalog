@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Brands\" />
     <Folder Include="Categories\" />
-    <Folder Include="Products\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
