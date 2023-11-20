@@ -13,7 +13,7 @@ public class ProductImage
     /// <summary>
     /// Product id.
     /// </summary>
-    required public int ProductId { get; set; }
+    public int ProductId { get; set; }
 
     /// <summary>
     /// Image's URL.

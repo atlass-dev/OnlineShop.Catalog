@@ -35,6 +35,8 @@ public class AppDbContext : DbContext, IAppDbContext
     {
         base.OnModelCreating(builder);
         RestrictCascadeDelete(builder);
+        ConfigureProducts(builder);
+        ConfigureBrands(builder);
     }
 
     private void RestrictCascadeDelete(ModelBuilder builder)
@@ -43,5 +45,21 @@ public class AppDbContext : DbContext, IAppDbContext
         {
             relationship.DeleteBehavior = DeleteBehavior.Restrict;
         }
+    }
+
+    private void ConfigureProducts(ModelBuilder builder)
+    {
+        builder.Entity<Product>()
+            .HasMany(p => p.Images)
+            .WithOne()
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+
+    private void ConfigureBrands(ModelBuilder builder)
+    {
+        builder.Entity<Brand>()
+            .HasMany(b => b.Images)
+            .WithOne()
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

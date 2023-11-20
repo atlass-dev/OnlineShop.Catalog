@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Catalog.Domain", "OnlineShop.Catalog.Domain\OnlineShop.Catalog.Domain.csproj", "{EC693545-AEF4-45A9-A2A6-2654EF740B99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Catalog.Domain", "OnlineShop.Catalog.Domain\OnlineShop.Catalog.Domain.csproj", "{EC693545-AEF4-45A9-A2A6-2654EF740B99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Catalog.Implementations", "OnlineShop.Catalog.Implementations\OnlineShop.Catalog.Implementations.csproj", "{8478ADDB-8091-4AC1-8595-AAEE969826A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Catalog.Implementations", "OnlineShop.Catalog.Implementations\OnlineShop.Catalog.Implementations.csproj", "{8478ADDB-8091-4AC1-8595-AAEE969826A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Catalog.DataAccess", "OnlineShop.Catalog.DataAccess\OnlineShop.Catalog.DataAccess.csproj", "{C904F17E-04C0-4B4F-8212-559E3F3553CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Catalog.DataAccess", "OnlineShop.Catalog.DataAccess\OnlineShop.Catalog.DataAccess.csproj", "{C904F17E-04C0-4B4F-8212-559E3F3553CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Catalog", "OnlineShop.Catalog\OnlineShop.Catalog.csproj", "{06F523E7-E344-4796-AD20-A5B51F9665F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Catalog", "OnlineShop.Catalog\OnlineShop.Catalog.csproj", "{06F523E7-E344-4796-AD20-A5B51F9665F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Catalog.Abstractions", "OnlineShop.Catalog.Abstractions\OnlineShop.Catalog.Abstractions.csproj", "{999D15C0-F828-48EF-9B5D-66856D51678C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Catalog.Abstractions", "OnlineShop.Catalog.Abstractions\OnlineShop.Catalog.Abstractions.csproj", "{999D15C0-F828-48EF-9B5D-66856D51678C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Catalog.UseCases", "OnlineShop.Catalog.UseCases\OnlineShop.Catalog.UseCases.csproj", "{5B2D7E58-ACDA-45DD-94C1-DC6AA16306F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{999D15C0-F828-48EF-9B5D-66856D51678C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{999D15C0-F828-48EF-9B5D-66856D51678C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{999D15C0-F828-48EF-9B5D-66856D51678C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2D7E58-ACDA-45DD-94C1-DC6AA16306F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2D7E58-ACDA-45DD-94C1-DC6AA16306F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2D7E58-ACDA-45DD-94C1-DC6AA16306F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2D7E58-ACDA-45DD-94C1-DC6AA16306F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

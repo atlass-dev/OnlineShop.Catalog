@@ -10,7 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Extensions.Hosting.AsyncInitialization" Version="3.0.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -25,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineShop.Catalog.DataAccess\OnlineShop.Catalog.DataAccess.csproj" />
+    <ProjectReference Include="..\OnlineShop.Catalog.UseCases\OnlineShop.Catalog.UseCases.csproj" />
   </ItemGroup>
 
 </Project>

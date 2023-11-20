@@ -1,6 +1,8 @@
 using OnlineShop.Catalog.Abstractions.Interfaces.Database;
 using OnlineShop.Catalog.DataAccess;
+using OnlineShop.Catalog.Infrastructure.DependencyInjection;
 using OnlineShop.Catalog.Infrastructure.Startup;
+using OnlineShop.Catalog.UseCases.Products.Commands.CreateProduct;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,9 @@ builder.Services.AddAsyncInitializer<DatabaseInitializer>();
 // Add services to the container.
 
 builder.Services.AddScoped<IAppDbContext>(s => s.GetRequiredService<AppDbContext>());
+
+MediatRModule.Register(builder.Services);
+builder.Services.AddAutoMapper(typeof(CreateProductCommand).Assembly);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
